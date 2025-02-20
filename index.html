@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Cinematic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    /* Custom styles for the video block */
+    .video-container {
+      transition: transform 0.3s ease; /* Smooth transition */
+    }
+    .video-container:hover {
+      transform: scale(1.05); /* Scale up on hover */
+      z-index: 10; /* Bring to front */
+    }
+  </style>
+</head>
+<body class="bg-black h-screen flex flex-col">
+  <!-- Header -->
+  <div class="bg-gray-800 text-white text-center py-4">
+    <h1 class="text-xl font-bold">Cinematic</h1>
+  </div>
+  <!-- Main Content -->
+  <div class="flex flex-1 flex-col lg:flex-row">
+    <!-- Video Section -->
+    <div class="flex-1 bg-black">
+      <!-- Embedded YouTube video -->
+      <div class="video-container">
+        <iframe id="video-frame" class="w-full h-full" src="https://www.youtube.com/embed/7hd429vNaR4?rel=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- Prestasi List -->
+    <div class="bg-gray-800 p-4 lg:w-1/4">
+      <ul class="space-y-2">
+        <li class="bg-gray-700 p-2 rounded hover:bg-gray-600 transition duration-300">
+          <a href="https://www.youtube.com/embed/7hd429vNaR4?rel=0&autoplay=1" target="video-frame" class="text-white">Boxing Cinematic</a>
+        </li>
+        <li class="bg-gray-700 p-2 rounded hover:bg-gray-600 transition duration-300">
+          <a href="https://www.youtube.com/embed/I1QGgBlx2g0?rel=0&autoplay=1" target="video-frame" class="text-white">Urbex Cinematic</a>
+        </li>
+        <li class="bg-gray-700 p-2 rounded hover:bg-gray-600 transition duration-300">
+          <a href="https://www.youtube.com/embed/YgI1CeaGX8A?rel=0&autoplay=1" target="video-frame" class="text-white">Jungle Cinematic</a>
+        </li>
+        <li class="bg-gray-700 p-2 rounded hover:bg-gray-600 transition duration-300">
+          <a href="https://www.youtube.com/embed/fEErySYqItI?rel=0&autoplay=1" target="video-frame" class="text-white">Nature Cinematic</a>
+        </li>
+        <li class="bg-gray-700 p-2 rounded hover:bg-gray-600 transition duration-300">
+          <a href="https://www.youtube.com/embed/HaOaUwbsmdc?rel=0&autoplay=1" target="video-frame" class="text-white">Minecraft Cinematic</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="bg-gray-800 text-white text-center py-2">
+    <p>Selamat Datang di Website Cinematic! Lihat berbagai video terbaru dari koleksi kami! 🔥</p>
+  </div>
+  <script>
+    // Function to change the video when a link is clicked
+    document.querySelectorAll('a[target="video-frame"]').forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const iframe = document.getElementById('video-frame');
+        iframe.src = this.href; // Change the iframe source to the link's href
+      });
+    });
+  </script>
+</body>
+</html>
